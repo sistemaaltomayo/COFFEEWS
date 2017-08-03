@@ -22,6 +22,6 @@ require_once "app/lib/nusoap.php";
 
 
 
+ /***************************************  SISTEMAS ******************************************/
 
-
-
+   	Route::any('/asistencia-personal/{fecha}', 'AsistenciaController@actionAsistenciaPersonalDetalle');
