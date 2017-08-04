@@ -10,7 +10,10 @@ class AsistenciaController extends BaseController
 		$stmt = DB::connection('sqlsrv')->getPdo()->prepare('SET NOCOUNT ON;EXEC SMS_EMAILASISTENCIAWS ?');
         $stmt->bindParam(1, $fecha ,PDO::PARAM_STR);
         $stmt->execute();	
-		$listaAsistencia = DB::table('GEN.EmailAsistenciaEmpleadosWS')->get();
+
+
+		$listaAsistencia = GENEmailAsistenciaEmpleadosWS::get()->toJson();
+
         print_r($listaAsistencia);
 
 	}
