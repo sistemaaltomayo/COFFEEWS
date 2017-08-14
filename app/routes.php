@@ -13,7 +13,7 @@ require_once "app/lib/nusoap.php";
 |
 */
 
- /***************************************  Webservis ******************************************/
+ /***************************************  PERSONAL ******************************************/
 
  	
  	Route::any('/aceptar-rechazar-solicitud', 'PersonalController@actionAceptarRechazarSolicitud');
@@ -22,6 +22,12 @@ require_once "app/lib/nusoap.php";
 
 
 
- /***************************************  SISTEMAS ******************************************/
+ /***************************************  ASISTENCIA ******************************************/
 
    	Route::any('/asistencia-personal/{fecha}', 'AsistenciaController@actionAsistenciaPersonalDetalle');
+
+
+ /***************************************  VENTAS ******************************************/
+
+   	Route::any('/ventas-zonas', 'VentaController@actionVentaTotales');
+
