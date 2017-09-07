@@ -16,8 +16,8 @@ class VentaController extends BaseController
 				        	})
 							->where('Gen.LocalMovil.Activo', '=', 1)
 							->where('Gen.LocalMovil.IdLocal', '<>', 'LIM01CEN000000000000')
-							->selectRaw('SUM(Ven.Venta.TotalOriginal) as Total  , Gen.LocalMovil.Descripcion')
-							->groupBy('Gen.LocalMovil.Descripcion')->get()->toJson();
+							->selectRaw('SUM(Ven.Venta.TotalOriginal) as Total  , Gen.LocalMovil.Descripcion ,Gen.LocalMovil.IdLocal')
+							->groupBy('Gen.LocalMovil.Descripcion')->groupBy('Gen.LocalMovil.IdLocal')->get()->toJson();
 
         print_r($listaVentas);
 
