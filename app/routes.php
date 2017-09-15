@@ -32,3 +32,7 @@ require_once "app/lib/nusoap.php";
 
    	Route::any('/ventas-zonas', 'VentaController@actionVentaTotales');
 
+ /***************************************  Inventario ******************************************/
+
+   	Route::any('/stock-artesania', 'InventarioController@actionStockArtesania');
+   	Route::any('/stock-cafeteria', 'InventarioController@actionStockCafeteria');   	
