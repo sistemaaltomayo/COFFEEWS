@@ -12,9 +12,9 @@ class InventarioController extends BaseController
 
 	}
 
-	public function actionStockCafeteria()
+	public function actionStockCafeteria($idlocal)
 	{
-		$listaStockCafeteria = StockCafeterias::orderBy('Sede', 'desc')
+		$listaStockCafeteria = StockCafeterias::orderBy('Sede', 'desc')->where('Id','=',$idlocal)
 								->orderBy('Clase', 'desc')->orderBy('StockActual', 'desc')->get()->toJson();
 
         print_r($listaStockCafeteria);
